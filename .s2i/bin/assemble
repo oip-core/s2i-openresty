@@ -24,6 +24,9 @@ fi
 echo "---> Installing application source..."
 cp -Rf /tmp/src/. ./
 
+echo "---> Forcing git repo to https// ..."
+git config --global url."https://".insteadOf git://
+
 echo "---> Building application from source..."
 
 if [ -e "/tmp/src/Roverfile.lock" ]; then
